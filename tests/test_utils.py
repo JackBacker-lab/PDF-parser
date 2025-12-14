@@ -1,13 +1,5 @@
 import unittest
-
-def int_to_rgb(color: int) -> tuple[int, int, int]:
-    if not 0 <= color <= 0xFFFFFF:
-        raise ValueError("color must be 0..0xFFFFFF")
-    return (
-        (color >> 16) & 0xFF,
-        (color >> 8) & 0xFF,
-        color & 0xFF,
-    )
+from pdf_parser.utils import int_to_rgb
 
 class TestIntToRgb(unittest.TestCase):
     def test_basic_colors(self):
