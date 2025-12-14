@@ -29,9 +29,10 @@ pip install -r requirements.txt
 ```
 
 
-## Usage example
-```
+## Usage examples
+```bash
 python pdf_parser/cli.py --testament OT --mode ches --output output.txt
+python pdf_parser/cli.py --testament NT --mode clis --output output_nt.txt
 ```
 
 ## CLI arguments
