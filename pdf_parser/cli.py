@@ -34,7 +34,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--output",
         type=Path,
-        default=PROJECT_ROOT / "output.txt",
+        default=PROJECT_ROOT / "output_folder" / "output.txt",
         help="Output text file"
     )
 
@@ -43,6 +43,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main():
     args = build_parser().parse_args()
+    args.output.parent.mkdir(parents=True, exist_ok=True)
     cfg: ParseConfig = resolve_config(args.testament, args.mode)
 
     parse(
