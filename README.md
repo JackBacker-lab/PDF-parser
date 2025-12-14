@@ -14,10 +14,10 @@ PDF Bible text parser with colored text extraction using PyMuPDF.
 ```text
 pdf_files/
 ├── OT/
-│   ├── GEN1.pdf
+│   ├── gen1.pdf
 │   └── ...
 └── NT/
-    ├── MAT1.pdf
+    ├── mat1.pdf
     └── ...
 ```
 
@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 ## Usage example
 ```
-python cli.py --testament OT --mode ches --output output.txt
+python pdf_parser/cli.py --testament OT --mode ches --output output.txt
 ```
 
 ## CLI arguments
