@@ -3,7 +3,7 @@ import fitz
 
 def int_to_rgb(color: int) -> tuple[int, int, int]:
     if not 0 <= color <= 0xFFFFFF:
-        print("color must be 0..0xFFFFFF")
+        print("Color must be 0..0xFFFFFF")
         return None
     return (
         (color >> 16) & 0xFF,
