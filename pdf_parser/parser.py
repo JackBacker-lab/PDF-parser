@@ -1,20 +1,7 @@
 from pathlib import Path
 import fitz
 
-def int_to_rgb(color: int) -> tuple[int, int, int]:
-    return (
-        (color >> 16) & 0xFF,
-        (color >> 8) & 0xFF,
-        color & 0xFF,
-    )
-    
-    
-def open_pdf(path: Path) -> fitz.Document | None:
-    if not path.exists():
-        print(f"[WARN] File not found: {path}")
-        return None
-    return fitz.open(path)
-
+from utils import int_to_rgb, open_pdf
 
 def extract_colored_text(
     page: fitz.Page,
@@ -34,8 +21,7 @@ def extract_colored_text(
                         continue
                 
                 rgb = int_to_rgb(span["color"])
-                if rgb in target_colors:
-                    print(hex(span["color"]), rgb)
+                if not rgb is None and rgb in target_colors:
                     result.append(text)
 
     return result
