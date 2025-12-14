@@ -1,14 +1,44 @@
 # PDF-parser
-PDF Bible text parser (colored text extraction)
+
+PDF Bible text parser with colored text extraction using PyMuPDF.
 
 ## Requirements
-* Python 3.10+
-* PyMuPDF
+- Python 3.10+
+- PyMuPDF
 
-## Installation & Run Example
+(see `requirements.txt`)
+
+## Input data
+
+### Expected input directory structure
+```text
+pdf_files/
+├── OT/
+│   ├── GEN1.pdf
+│   └── ...
+└── NT/
+    ├── MAT1.pdf
+    └── ...
+```
+
+## Installation
 ```
 git clone https://github.com/JackBacker-lab/PDF-parser
 cd PDF-parser
 pip install -r requirements.txt
+```
+
+
+## Usage example
+```
 python cli.py --testament OT --mode ches --output output.txt
 ```
+
+## CLI arguments
+* --testament: OT or NT
+* --mode:
+  * ches — Concordant Hebrew English Sublinear
+  * clis — Concordant Literal Idiomatic Sublinear
+  * cles — Concordant Literal Etymological Sublinear
+* --output: output .txt file path
+
