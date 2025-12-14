@@ -1,7 +1,7 @@
 # PDF-parser
 PDF Bible text parser (colored text extraction)
 
-## Tech Stack
+## Requirements
 * Python 3.10+
 * PyMuPDF
 
